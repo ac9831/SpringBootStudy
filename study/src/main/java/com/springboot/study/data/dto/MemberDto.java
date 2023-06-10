@@ -1,4 +1,4 @@
-package com.springboot.study.dto;
+package com.springboot.study.data.dto;
 
 public class MemberDto {
 
