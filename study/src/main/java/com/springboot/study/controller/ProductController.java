@@ -5,15 +5,25 @@ import com.springboot.study.data.dto.ProductDto;
 import com.springboot.study.data.dto.ProductResponseDto;
 import com.springboot.study.service.ProductService;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     private final ProductService productService;
 
     @Autowired
