@@ -3,9 +3,11 @@ package com.springboot.study.data.repository.support;
 import com.springboot.study.data.entity.Product;
 import com.springboot.study.data.entity.QProduct;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ProductRepositoryCustomImpl extends QuerydslRepositorySupport
         implements ProductRepositoryCustom {
 

@@ -3,14 +3,16 @@ package com.springboot.study.data.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-@ToString(exclude = "name")
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Table(name=  "product")
 public class Product extends BaseEntity{
 
@@ -35,5 +37,13 @@ public class Product extends BaseEntity{
     @JoinColumn(name = "provider_id")
     @ToString.Exclude
     private Provider provider;
+
+    @ManyToMany
+    @ToString.Exclude
+    private List<Producer> producers = new ArrayList<>();
+
+    public void addProducer(Producer producer) {
+        this.producers.add(producer);
+    }
 
 }

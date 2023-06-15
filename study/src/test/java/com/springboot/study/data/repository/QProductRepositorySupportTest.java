@@ -1,4 +1,4 @@
-package com.springboot.study.data.repository.support;
+package com.springboot.study.data.repository;
 
 import com.springboot.study.data.entity.Product;
 import org.junit.jupiter.api.Test;
@@ -8,14 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-public class ProductRepositoryTest {
+public class QProductRepositorySupportTest {
 
     @Autowired
-    ProductRepository productRepository;
+    QProductRepositorySupport qProductRepositorySupport;
 
     @Test
-    void findByNameTest() {
-        List<Product> productList = productRepository.findByName("펜");
+    void findByNameTest(){
+        List<Product> productList = qProductRepositorySupport.findByName("펜");
 
         for (Product product : productList) {
             System.out.println(product.getNumber());
